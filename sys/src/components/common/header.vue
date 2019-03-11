@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-      <el-row :span="24" class="header">
+      <el-row class="header">
           <el-col :span="4">
               <div class="left_banner">
                   <img src="../../../static/image/login/img_title.png" alt="">
@@ -8,22 +8,42 @@
           </el-col>
           <el-col :span="17" class="middle_banner"></el-col>
           <el-col :span="3" class="right_banner">
-              <el-row :span="24">
-                  <el-col span="6">
+              <el-row>
+                  <el-col :span="6">
                       <div class="head_pic">
                           <img src="../../../static/image/login/icon_zh.png" alt="">
                       </div>
                   </el-col>
-                  <el-col span="12" class="name_type">
+                  <el-col :span="12" class="name_type">
                       <p>张小小撒</p>
                       <p>支具室</p>
                   </el-col>
-                  <el-col span="6" class="arrow_box">
+                  <el-col :span="6" class="arrow_box">
                       <span class="arrows"></span>
                   </el-col>
               </el-row>
           </el-col>
       </el-row>
+      <div class="nav_bar">
+        <el-row style="margin: 20px">
+            <el-col class="nav_box" :span="24">
+                <i><img src="../../../static/image/login/icon_khgl.png" alt=""></i>
+                <span>客户管理</span>
+            </el-col>
+        </el-row>
+        <el-row style="margin: 20px">
+            <el-col class="nav_box" :span="24">
+                <i><img src="../../../static/image/login/icon_ddgl.png" alt=""></i>
+                <span>订单管理</span>
+            </el-col>
+        </el-row>
+        <el-row style="margin: 20px">
+            <el-col class="nav_box" :span="24">
+                <i><img src="../../../static/image/login/icon_xsbb.png" alt=""></i>
+                <span>销售管理</span>
+            </el-col>
+        </el-row>
+      </div>
   </div>
 </template>
 
@@ -42,6 +62,7 @@ export default {
 <style scoped lang="scss">
 .container{
     width: 100%;
+    height: 100%;
     .header{
         height: 60px;
         background: #56A9FF;
@@ -96,6 +117,26 @@ export default {
                     transform: rotate(45deg);
                     margin-top: 3px;
                 }
+            }
+        }
+    }
+    .nav_bar{
+        width: 10.4%;
+        height: 93.2%;
+        display: inline-block;
+        background: #ffffff;
+        position: relative;
+        right: 16.8%;
+        border-right: 1px solid #eeeeee;
+        .nav_box{
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #606266;
+            text-align: center;
+            cursor: pointer;
+            span{
+                position: relative;
+                bottom: 8px;
             }
         }
     }
