@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    
+    测评
   </div>
 </template>
 
 <script>
 export default {
-  name: 'order',
+  name: 'App',
   data() {
-    return {
-        
-    }
+      return {
+
+      }
   }
 };
 </script>

@@ -104,20 +104,20 @@
       <el-row class="client_table">
         <el-col :span="24">
           <el-table :border="true" :data="clientData" style="width: 100%">
-            <el-table-column width="80" align="center" type="index" label="序号">
+            <el-table-column width="60" align="center" type="index" label="序号">
 
             </el-table-column>
-            <el-table-column align="center" prop="name" label="订单编号" width="220"></el-table-column>
-            <el-table-column align="center" prop="sex" label="客户姓名" width="120"></el-table-column>
-            <el-table-column align="center" prop="operation" label="联系电话" width="200">
+            <el-table-column align="center" prop="name" label="订单编号" min-width="150"></el-table-column>
+            <el-table-column align="center" prop="sex" label="客户姓名" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="operation" label="联系电话" min-width="120">
             </el-table-column>
-            <el-table-column align="center" prop="visitState" label="订单状态" width="100"></el-table-column>
-            <el-table-column align="center" prop="phone" label="下单时间" width="200"></el-table-column>
-            <el-table-column align="center" prop="isOrder" label="下单人" width="150"></el-table-column>
-            <el-table-column align="center" prop="clientState" label="订单类型" width="120"></el-table-column>
-            <el-table-column align="center" prop="age" label="付款类型" width="126"></el-table-column>
-            <el-table-column align="center" prop="clientSource" label="是否欠款" width="120"></el-table-column>
-            <el-table-column align="center" prop="createTime" label="操作" width="250">
+            <el-table-column align="center" prop="visitState" label="订单状态" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="phone" label="下单时间" min-width="120"></el-table-column>
+            <el-table-column align="center" prop="isOrder" label="下单人" min-width="90"></el-table-column>
+            <el-table-column align="center" prop="clientState" label="订单类型" min-width="90"></el-table-column>
+            <el-table-column align="center" prop="age" label="付款类型" min-width="90"></el-table-column>
+            <el-table-column align="center" prop="clientSource" label="是否欠款" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="createTime" label="操作" min-width="180">
               <template>
                 <el-button type="primary" size="small">打印小票</el-button>
                 <el-button size="small" type="success">详情</el-button>
@@ -193,21 +193,18 @@ export default {
   methods: {
     handleOrder(row) {
       console.log('下单');
-      console.log(row);
     },
     handleModify(row) {
       console.log('修改');
-      console.log(row);
     },
     handleInfo(row) {
       console.log('详情')
-      console.log(row);
     }
   }
 };
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
 .container{
   width: 100%;
   height: 900px;
@@ -223,7 +220,6 @@ export default {
     span{
       font-size: 14px;
       letter-spacing: 1px;
-      color: #606266;
     }
   }
   .client_info{
@@ -232,7 +228,6 @@ export default {
     span{
       font-size: 14px;
       letter-spacing: 1px;
-      color: #606266;
     }
   }
 }

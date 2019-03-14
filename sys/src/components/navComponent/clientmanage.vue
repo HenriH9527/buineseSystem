@@ -43,14 +43,14 @@
           </el-date-picker>
         </el-col>
         <el-col :span="1" style="width: 4.8%">
-          <el-button size="small" type="primary">查询</el-button>
+          <el-button size="small" type="primary" class="btns">查询</el-button>
         </el-col>
         <el-col :span="1" style="width: 4.8%">
-          <el-button size="small" type="primary">今天</el-button>
+          <el-button size="small" type="primary" class="btns">今天</el-button>
         </el-col><el-col :span="1" style="width: 4.8%">
-          <el-button size="small">昨天</el-button>
+          <el-button size="small" class="btns">昨天</el-button>
         </el-col><el-col :span="1" style="width: 4.8%">
-          <el-button size="small">近七天</el-button>
+          <el-button size="small" class="btns">近七天</el-button>
         </el-col>
       </el-row>
       <el-row class="client_info">
@@ -98,26 +98,26 @@
       <el-row class="client_table">
         <el-col :span="24">
           <el-table :border="true" :data="clientData" style="width: 100%">
-            <el-table-column width="80" align="center" type="index" label="序号">
+            <el-table-column width="60" align="center" type="index" label="序号">
 
             </el-table-column>
-            <el-table-column align="center" prop="name" label="客户姓名" width="120"></el-table-column>
-            <el-table-column align="center" prop="sex" label="性别" width="80"></el-table-column>
-            <el-table-column align="center" prop="operation" label="操作" width="286">
+            <el-table-column align="center" prop="name" label="客户姓名" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="sex" label="性别" min-width="50"></el-table-column>
+            <el-table-column align="center" prop="operation" label="操作" min-width="240">
               <template slot-scope="scope">
                 <el-button type="primary" @click="handleOrder(scope.row)" size="small">下单</el-button>
                 <el-button  @click="handleModify(scope.row)" type="warning" size="small">修改</el-button>
                 <el-button  @click="handleInfo(scope.row)" type="success" size="small">详情</el-button>
               </template>
             </el-table-column>
-            <el-table-column align="center" prop="visitState" label="到访状态" width="100"></el-table-column>
-            <el-table-column align="center" prop="phone" label="联系电话" width="170"></el-table-column>
-            <el-table-column align="center" prop="isOrder" label="是否下单" width="120"></el-table-column>
-            <el-table-column align="center" prop="clientState" label="客户状态" width="120"></el-table-column>
-            <el-table-column align="center" prop="age" label="年龄" width="120"></el-table-column>
-            <el-table-column align="center" prop="clientSource" label="客户来源" width="120"></el-table-column>
-            <el-table-column align="center" prop="createTime" label="创建时间" width="250"></el-table-column>
-            <el-table-column align="center" prop="isMember" label="是否会员" width="120"></el-table-column>
+            <el-table-column align="center" prop="visitState" label="到访状态" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="phone" label="联系电话" min-width="120"></el-table-column>
+            <el-table-column align="center" prop="isOrder" label="是否下单" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="clientState" label="客户状态" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="age" label="年龄" min-width="50"></el-table-column>
+            <el-table-column align="center" prop="clientSource" label="客户来源" min-width="80"></el-table-column>
+            <el-table-column align="center" prop="createTime" label="创建时间" min-width="140"></el-table-column>
+            <el-table-column align="center" prop="isMember" label="是否会员" min-width="80"></el-table-column>
           </el-table>
         </el-col>
       </el-row>
@@ -200,7 +200,7 @@ export default {
 };
 </script>
 
-<style scope lang="scss">
+<style scoped lang="scss">
 .container{
   width: 100%;
   height: 900px;
@@ -214,9 +214,8 @@ export default {
     padding-bottom: 8px;
     border-bottom: 1px solid #e4e7ed;
     span{
-      font-size: 14px;
+      font-size: 20px;
       letter-spacing: 1px;
-      color: #606266;
     }
   }
   .client_info{
@@ -225,7 +224,6 @@ export default {
     span{
       font-size: 14px;
       letter-spacing: 1px;
-      color: #606266;
     }
   }
 }

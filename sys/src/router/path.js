@@ -1,4 +1,4 @@
-const Home = resolve => require(['@/components/home'], resolve);
+const Support = resolve => require(['@/components/support'], resolve);
 const LoginPage = resolve => require(['../components/login'], resolve);
 
-export { Home, LoginPage };
+export { Support, LoginPage };
