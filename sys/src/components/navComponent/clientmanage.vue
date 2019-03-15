@@ -214,7 +214,7 @@ export default {
     padding-bottom: 8px;
     border-bottom: 1px solid #e4e7ed;
     span{
-      font-size: 20px;
+      font-size: 14px;
       letter-spacing: 1px;
     }
   }
