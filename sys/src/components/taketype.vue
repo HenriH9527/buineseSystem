@@ -26,14 +26,17 @@ export default {
         isClose: false,
       }],
       navTable: [{
-        name: 'clientManage',
-        title: '客户管理',
+        name: 'willReceive',
+        title: '待接待',
       },{
-        name: 'alreadyAllocate',
+        name: 'receive',
         title: '已接待',
       },{
-        name: 'orderManage',
-        title: '订单管理',
+        name: 'willSelfTest',
+        title: '待自检',
+      },{
+        name: 'alreadyReject',
+        title: '已驳回',
       },{
         name: 'statistics',
         title: '统计报表',

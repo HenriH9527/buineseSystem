@@ -1,8 +1,8 @@
 <template>
   <div class="container">
       <el-row class="search">
-        <el-col :span="3" style="width: 5.9%;line-height: 30px">
-          <span>下单日期：</span>
+        <el-col :span="2" style="width: 5.9%;line-height: 30px">
+          <span class="time_style">下单日期：</span>
         </el-col>
         <el-col :span="4">
           <el-date-picker
@@ -94,14 +94,22 @@ export default {
   height: 900px;
   .search{
     width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #E4E7ED;
+    padding-bottom: 10px;
+    .time_style{
+      letter-spacing: 1px;
+      font-size: 14px;
+      color: #606266;
+    }
   }
   .office_performance{
     width: 100%;
     text-align: center;
     font-size: 14px;
     margin-top: 10px;
-      letter-spacing: 1px;
-      color: #606266;
+    letter-spacing: 1px;
+    color: #606266;
   }
   .client_table{
     margin-top: 10px;

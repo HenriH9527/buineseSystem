@@ -25,22 +25,10 @@
           </el-col>
       </el-row>
       <div class="nav_bar">
-        <el-row style="margin: 20px">
-            <el-col class="nav_box" :span="24">
+        <el-row v-for="nav in navTables" :key="nav.name" style="margin: 20px 0 20px 40px">
+            <el-col  class="nav_box" :span="24">
                 <i><img src="../../../static/image/login/icon_khgl.png" alt=""></i>
-                <span>客户管理</span>
-            </el-col>
-        </el-row>
-        <el-row style="margin: 20px">
-            <el-col class="nav_box" :span="24">
-                <i><img src="../../../static/image/login/icon_ddgl.png" alt=""></i>
-                <span>订单管理</span>
-            </el-col>
-        </el-row>
-        <el-row style="margin: 20px">
-            <el-col class="nav_box" :span="24">
-                <i><img src="../../../static/image/login/icon_xsbb.png" alt=""></i>
-                <span>销售管理</span>
+                <span @click="switchTitle(nav.name)">{{nav.title}}</span>
             </el-col>
         </el-row>
       </div>
@@ -50,11 +38,23 @@
 <script>
 export default {
   name: 'HelloWorld',
+  props: {
+      navTables: Array,
+      required: true,
+  },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      newNavTable: [],
     };
   },
+  mounted() {
+
+  },
+  methods: {
+    switchTitle(item) {
+        this.$emit('acceptTitle', item);
+    }
+  }
 };
 </script>
 
@@ -132,7 +132,7 @@ export default {
             font-size: 16px;
             letter-spacing: 1px;
             color: #606266;
-            text-align: center;
+            // text-align: center;
             cursor: pointer;
             span{
                 position: relative;
