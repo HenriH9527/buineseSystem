@@ -22,15 +22,15 @@ export default {
       tables: [{
         title: '💳',
         name: 'home',
-        content: 'take-home',
+        content: 'front-home',
         isClose: false,
       }],
       navTable: [{
         name: 'clientManage',
         title: '客户管理',
       },{
-        name: 'alreadyAllocate',
-        title: '已接待',
+        name: 'alreadyReceive',
+        title: '已分配',
       },{
         name: 'orderManage',
         title: '订单管理',
@@ -69,43 +69,32 @@ export default {
       });
       if(_this.Repeat) {
         switch(newTabName) {
-          case 'willReceive':
+          case 'clientManage':
             _this.tables.push({
-              title: '待接待',
+              title: '客户管理',
               name: newTabName,
-              content: 'take-willReceive',
+              content: 'front-client',
               isClose: true,
             });
             this.tableNav = newTabName;
             break;
-          case 'receive':
+          case 'alreadyReceive':
             _this.tables.push(
               {
-                title: '已接待',
-                name: 'receive',
-                content: 'take-receive',
+                title: '已分配',
+                name: 'alreadyReceive',
+                content: 'front-receive',
                 isClose: true,
               }
             );
             this.tableNav = newTabName;
             break;
-          case 'willSelfTest':
+          case 'orderManage':
             _this.tables.push(
               {
-                title: '待自检',
-                name: 'willSelfTest',
-                content: 'take-willSelfTest',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'alreadyReject':
-            _this.tables.push(
-              {
-                title: '已驳回',
-                name: 'alreadyReject',
-                content: 'take-alreadyReject',
+                title: '订单管理',
+                name: 'orderManage',
+                content: 'front-order',
                 isClose: true,
               }
             );
@@ -116,7 +105,7 @@ export default {
               {
                 title: '统计报表',
                 name: 'statistics',
-                content: 'take-statistics',
+                content: 'front-statistic',
                 isClose: true,
               }
             );
