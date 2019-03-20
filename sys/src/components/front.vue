@@ -32,6 +32,7 @@ export default {
         name: 'alreadyReceive',
         title: '已分配',
       },{
+        
         name: 'orderManage',
         title: '订单管理',
       },{
