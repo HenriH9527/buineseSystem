@@ -34,6 +34,27 @@ import FrontOrder from './components/frontdesk/ordermanage';
 import FrontStatistic from './components/frontdesk/statistic';
 import FrontReceive from './components/frontdesk/alreadyreceive';
 
+//大客户
+import BigClientHome from './components/bigClient/homepage';
+import BigClientCommunity from './components/bigClient/community';
+import BigClientControlSchool from './components/bigClient/controlschool';
+import BigClientKindergarten from './components/bigClient/kindergarten';
+import BigClientSchool from './components/bigClient/school';
+import BigClientStatistic from './components/bigClient/statistic';
+import BigClientNursery from './components/bigClient/nursery';
+import Extends from './components/bigClient/child/extends';
+import Cooperation from './components/bigClient/child/cooperation';
+import CooperatOrganizatioin from './components/bigClient/cooperation';
+import DataOfExtend from './components/bigClient/child/dataofextend';
+import DataOfCooperation from './components/bigClient/child/dataofcooperation';
+
+//外出体检
+import OutWorkHome from './components/outwork/homepage';
+import OutWorkSchool from './components/outwork/school';
+import OutWorkKindergarten from './components/outwork/kindergarten';
+import OutWorkNursery from './components/outwork/nursery';
+import OutWorkControl from './components/outwork/controlschool';
+import OutWorkstatistic from './components/outwork/statistic';
 
 
 Vue.config.productionTip = false;
@@ -60,6 +81,29 @@ Vue.component('front-client', FrontClient);
 Vue.component('front-order', FrontOrder);
 Vue.component('front-statistic', FrontStatistic);
 Vue.component('front-receive', FrontReceive);
+
+//大客户
+Vue.component('big-home', BigClientHome);
+Vue.component('big-nursery', BigClientNursery);
+Vue.component('big-kindergarten', BigClientKindergarten);
+Vue.component('big-school', BigClientSchool);
+Vue.component('big-statistic', BigClientStatistic);
+Vue.component('big-control', BigClientControlSchool);
+Vue.component('big-community', BigClientCommunity);
+Vue.component('big-extends', Extends);
+Vue.component('big-cooperation', Cooperation);
+Vue.component('big-cooperateOrganization', CooperatOrganizatioin);
+Vue.component('big-dataOfExtend', DataOfExtend);
+Vue.component('big-dataOfCooperation', DataOfCooperation);
+
+//外出体检
+Vue.component('outwork-home', OutWorkHome);
+Vue.component('outwork-school', OutWorkSchool);
+Vue.component('outwork-kindergarten', OutWorkKindergarten);
+Vue.component('outwork-nursery', OutWorkNursery);
+Vue.component('outwork-control', OutWorkControl);
+Vue.component('outwork-statistic', OutWorkstatistic);
+
 
 Vue.use(Vuex);
 Vue.use(ElementUI);

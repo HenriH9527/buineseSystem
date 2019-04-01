@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { Support, LoginPage, Modify, Front, TakeType, Evaluation } from './path';
+import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork } from './path';
 
 Vue.use(Router);
 
@@ -13,7 +13,7 @@ export default new Router({
     },
     {
       path: '/support',
-      name: 'support',
+      name: 'supports',
       component: Support,
     },
     {
@@ -40,6 +40,16 @@ export default new Router({
       path: '/front',
       name: 'frontdesk',
       component: Front,
+    },
+    {
+      path: '/bigclient',
+      name: 'bigClient',
+      component: BigClient,
+    },
+    {
+      path: '/outwork',
+      name: 'outwork',
+      component: OutWork,
     }
   ],
 });
