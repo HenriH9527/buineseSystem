@@ -11,7 +11,7 @@
       </el-col>
     </el-row>
     <el-row class="search">
-        <el-col :span="2" style="width: 4%;line-height: 30px">
+        <el-col :span="2" style="width: 5%;line-height: 30px">
           <span>区县:</span>
         </el-col>
         <el-col :span="2">
@@ -31,8 +31,8 @@
             </el-option>
           </el-select>
         </el-col>
-        <el-col :span="2" style="width: 5%;line-height: 30px">
-          <span>幼儿园:</span>
+        <el-col :span="2" style="width: 6%;line-height: 30px">
+          <span>学校类型:</span>
         </el-col>
         <el-col :span="2">
           <el-select size="small" v-model="isMember">
@@ -41,16 +41,28 @@
             </el-option>
           </el-select>
         </el-col>
+        <el-col :span="2" style="width: 6%;line-height: 30px">
+          <span>学校名称:</span>
+        </el-col>
+        <el-col :span="2">
+          <el-select size="small" v-model="isMember">
+            <el-option value="[1, 2, 3]">
+
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+      <el-row class="search">
         <el-col :span="2" style="width: 5%;line-height: 30px">
           <span>体检人:</span>
         </el-col>
         <el-col :span="2" style="text-align: left">
           <el-input placeholder="请输入体检人" size="small"></el-input>     
         </el-col>
-        <el-col :span="2" style="width: 5.33%;text-align: center;line-height: 30px;">
+        <el-col :span="2" style="width: 6.5%;text-align: center;line-height: 30px;">
         体检时间：
-      </el-col>
-      <el-col :span="5">
+        </el-col>
+        <el-col :span="5">
         <el-date-picker
         style="width: 100%;"
         size="small"
@@ -61,7 +73,7 @@
         end-placeholder="结束日期">
         </el-date-picker>
       </el-col>
-        <el-col :span="2" style="width: 6%;line-height: 30px">
+        <el-col :span="2" style="width: 6.5%;line-height: 30px">
           <span>体检时长:</span>
         </el-col>
         <el-col :span="2" style="text-align: left">

@@ -1,31 +1,54 @@
 <template>
   <div class="container">
-    <el-row class="statistic">
-        <el-col :span="4" class="box">
-            <p>今日预计到访总人数</p>
-            <h2>200</h2>
-        </el-col>
-        <el-col :span="4" class="box">
-            <p>儿院下单客户数</p>
-            <h2>200</h2>
-        </el-col>
-        <el-col :span="4" class="box">
-            <p>儿院到访客户数</p>
-            <h2>200</h2>
-        </el-col>
-        <el-col :span="4" class="box">
-            <p>口碑到访客户数</p>
-            <h2>200</h2>
-        </el-col>
-        <el-col :span="4" class="box">
-            <p>到访总人数</p>
-            <h2>200</h2>
-        </el-col>
+    <el-row class="query_hurdle">
+      <el-col :span="2" style="width: 6%;text-align: center">
+        体检时间：
+      </el-col>
+      <el-col :span="5">
+        <el-date-picker
+        style="width: 100%;"
+        size="small"
+        v-model="date"
+        type="daterange"
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期">
+        </el-date-picker>
+      </el-col>
+      <el-col :span="2" style="width: 5.33%;text-align: center">
+        <el-button type="primary" size="small" style="margin-left: 10px">查询</el-button>
+      </el-col>
     </el-row>
-    <el-row class="graph_pool">
-        <el-col :span="22" class="graph_area">
-            <chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>
-        </el-col>
+    <el-row class="statistics">
+      <el-col class="module" :span="3">
+        <p>体检总次数</p>
+        <h2>90</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>全天次数</p>
+        <h2>90</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>半天次数</p>
+        <h2>90</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>体检总人数</p>
+        <h2>90</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>到访人数</p>
+        <h2>90</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>营业总额</p>
+        <h2>90</h2>
+      </el-col>
+    </el-row>
+    <el-row class="graph">
+      <el-col class="graph_box">
+        <chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -35,16 +58,24 @@ export default {
   name: 'App',
   data() {
       return {
-          msg: '主页',
-          orgOptions: {},
+        date: '',
+        takeName: '',
+        options: [{
+          value: '一',
+          label: '张三',
+        },{
+          value: '二',
+          label: '李四'
+        }],
+        orgOptions: {},
       }
   },
   mounted() {
     this.initChart();
-    this.init();   
+    this.init();
   },
   methods: {
-    init()  {
+    init ()  {
         const self = this;
         setTimeout(() => {
            window.onresize = function() {
@@ -53,56 +84,42 @@ export default {
         }, 10);
     },
     initChart() {
-        this.orgOptions = {
-            tooltip: {
-                trigger: 'axis'
-            },
-            color: [
-                '#3C8CEE', '#8BC34A', '#F56C6C'
-            ],  
-            legend: {
-                data:['试穿到访','复查到访','维修到访'],
-            },
-            grid: {
-                left: '3%',
-                right: '4%',
-                bottom: '3%',
-                containLabel: true
-            },
-            toolbox: {
-                feature: {
-                    saveAsImage: {}
+      this.orgOptions = {
+        dataset: {
+        source: [
+            ['score', 'amount', 'product'],
+            [60, 20, '入托体检'],
+            [21, 40, '入园体检'],
+            [70, 18, '入校体检']
+          ]
+        },
+        grid: {containLabel: true},
+        xAxis: {name: 'amount'},
+        yAxis: {type: 'category'},
+        visualMap: {
+          orient: 'horizontal',
+          left: 'center',
+          min: 10,
+          max: 100,
+          text: ['High Score', 'Low Score'],
+          // Map the score column to color
+          dimension: 0,        
+          inRange: {
+            color: ['#D7DA8B', '#E15457']
+          }
+        },
+        series: [
+            {
+                type: 'bar',
+                encode: {
+                    // Map the "amount" column to X axis.
+                    x: 'amount',
+                    // Map the "product" column to Y axis
+                    y: 'product'
                 }
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['9点','10点','11点','12点','13点','14点','15点']
-            },
-            yAxis: {
-                type: 'value'
-            },
-            series: [
-                {
-                    name:'试穿到访',
-                    type:'line',
-                    stack: '总量',
-                    data:[120, 132, 101, 134, 90, 230, 210]
-                },
-                {
-                    name:'复查到访',
-                    type:'line',
-                    stack: '总量',
-                    data:[220, 182, 191, 234, 290, 330, 310]
-                },
-                {
-                    name:'维修到访',
-                    type:'line',
-                    stack: '总量',
-                    data:[150, 232, 201, 154, 190, 330, 410]
-                },
-            ]
-        }
+            }
+        ]
+      }
     }
   }
 };
@@ -110,30 +127,42 @@ export default {
 
 <style scoped lang="scss">
 .container{
+  width: 100%;
+  .query_hurdle{
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #606266;
+    line-height: 40px;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .statistics{
     width: 100%;
-    .statistic{
-        margin: 15px 0;
-        text-align: center;
-        .box{
-            margin-left: 3%;
-            border: 1px solid rgba(187, 187, 187, .5);
-        }
+    border-top: 1px solid rgba(255, 255, 255, 0);
+    padding-top: 20px;
+    .module{
+      text-align: center;
+      border: 1px solid rgba(187, 187, 187, .5);
+      margin-left: 3%;
     }
-    .graph_pool{
-        height: 900px;
-        .graph_area{
-            width: 95.3%;
-            height: 100%;
-            background: rgba(244, 244, 244, 1);
-            margin-left: 3%;
-            padding-top: 30px;
-            .echarts{
-                width: 100%;
-                height: 600px;
-                position: relative;
-                left: 0px;
-            }
-        }
+  }
+  .graph{
+    height: 900px;
+    .graph_box{
+      width: 90%;
+      height: 100%;
+      background: rgba(244, 244, 244, 1);
+      margin-left: 3%;
+      margin-top: 20px;
+      .echarts{
+        width: 100%;
+        height: 600px;
+        position: relative;
+        left: -90px;
+      }
     }
+  }
 }
 </style>

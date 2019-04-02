@@ -55,7 +55,20 @@ import OutWorkKindergarten from './components/outwork/kindergarten';
 import OutWorkNursery from './components/outwork/nursery';
 import OutWorkControl from './components/outwork/controlschool';
 import OutWorkstatistic from './components/outwork/statistic';
+import Foot from './components/outwork/child/foot';
+import Bone from './components/outwork/child/bone';
+import SchoolFoot from './components/outwork/child/schoolfoot';
+import SchoolBone from './components/outwork/child/schoolbone';
+import StatisticFirst from './components/outwork/child/statisticfirst';
+import StatisticSecond from './components/outwork/child/statisticsecond';
 
+//修型车间
+import ModifyHome from './components/modifymodule/homepage';
+import ModifyWillAllot from './components/modifymodule/willallot';
+import ModifywillValidate from './components/modifymodule/willvalidate';
+import ModifyalreadyAllot from './components/modifymodule/alreadyallot';
+import ModifyReject from './components/modifymodule/reject';
+import ModifyStatistic from './components/modifymodule/statistic';
 
 Vue.config.productionTip = false;
 
@@ -103,6 +116,20 @@ Vue.component('outwork-kindergarten', OutWorkKindergarten);
 Vue.component('outwork-nursery', OutWorkNursery);
 Vue.component('outwork-control', OutWorkControl);
 Vue.component('outwork-statistic', OutWorkstatistic);
+Vue.component('outwork-foot', Foot);
+Vue.component('outwork-bone', Bone);
+Vue.component('outwork-schoolfoot', SchoolFoot);
+Vue.component('outwork-schoolbone', SchoolBone);
+Vue.component('outwork-first', StatisticFirst);
+Vue.component('outwork-second', StatisticSecond);
+
+//修型
+Vue.component('modify-home', ModifyHome);
+Vue.component('modify-willallot', ModifyWillAllot);
+Vue.component('modify-validate', ModifywillValidate);
+Vue.component('modify-reject', ModifyReject);
+Vue.component('modify-statistic', ModifyStatistic);
+Vue.component('modify-alreadyallot', ModifyalreadyAllot);
 
 
 Vue.use(Vuex);
