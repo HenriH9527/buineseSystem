@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork } from './path';
+import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork, Process, Quality } from './path';
 
 Vue.use(Router);
 
@@ -50,6 +50,16 @@ export default new Router({
       path: '/outwork',
       name: 'outwork',
       component: OutWork,
-    }
+    },
+    {
+      path: '/process',
+      name: 'process',
+      component: Process,
+    },
+    {
+      path: '/quality',
+      name: 'quality',
+      component: Quality,
+    },
   ],
 });

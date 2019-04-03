@@ -1,7 +1,7 @@
 <template>
   <div style="width: 100%;height: 100%;">
     <!-- <el-button type="danger" style="position:absolute; z-index:9999;top: 100px;"  @click="addTab('orderManage')">增加</el-button> -->
-    <my-header :navTables="navTable" v-on:acceptTitle="newTitle"></my-header>
+    <v-header :navTabs="navTabs" :secNav="secNav" v-on:acceptTitle="newTitle"></v-header>
     <div class="child_page">
       <el-tabs class="table_style" v-model="tableNav" type="card" @tab-remove="removeTab">
         <el-tab-pane class="home_table" v-for="(item) in tables" :key="item.name" :closable="item.isClose" :label="item.title" :name="item.name">
@@ -22,22 +22,53 @@ export default {
       tables: [{
         title: '💳',
         name: 'home',
-        content: 'front-home',
+        content: 'process-home',
         isClose: false,
       }],
-      navTable: [{
-        name: 'clientManage',
-        title: '客户管理',
-      },{
-        name: 'alreadyReceive',
-        title: '已分配',
-      },{
-        name: 'orderManage',
-        title: '订单管理',
-      },{
-        name: 'statistics',
-        title: '统计报表',
-      }],
+      navTabs: [
+          {
+              title: '半成品加工',
+              key: 'harf',
+              childItem: [
+                  {
+                      title: '待分配',
+                      key: 'willAllot1',
+                  },
+                  {
+                      title: '已分配',
+                      key: 'alreadyAllot1',
+                  },
+                  {
+                      title: '已驳回',
+                      key: 'reject1',
+                  },
+              ]
+          },
+          {
+              title: '自动成品加工',
+              key: 'all',
+              childItem: [
+                  {
+                      title: '待分配',
+                      key: 'willAllot2',
+                  },
+                  {
+                      title: '已分配',
+                      key: 'alreadyAllot2',
+                  },
+                  {
+                      title: '已驳回',
+                      key: 'reject2',
+                  },
+              ]
+          },
+      ],
+      secNav: [
+          {
+              title: '统计报表',
+              key: 'statistic',
+          }
+      ],
       Repeat: false,
     };
   },
@@ -57,55 +88,89 @@ export default {
   },
   methods: {
     // 增加标签
-    newTitle(prop) {
+    newTitle(item, itemPath) {
+      console.log(item);
       let _this = this;
-      let newTabName = prop + '';
+      let newTabName = item + '';
       this.tableNav = newTabName;
       _this.Repeat = true;
-      _this.tables.map((item) => {
-        if (item.name === prop) {
+      _this.tables.map((v) => {
+        if (v.name === item) {
           _this.Repeat = false;
         }
       });
       if(_this.Repeat) {
         switch(newTabName) {
-          case 'clientManage':
+          case 'willAllot1':
             _this.tables.push({
-              title: '客户管理',
+              title: '待分配',
               name: newTabName,
-              content: 'front-client',
+              content: 'process-firwillallot',
               isClose: true,
             });
             this.tableNav = newTabName;
             break;
-          case 'alreadyReceive':
+          case 'alreadyAllot1':
             _this.tables.push(
               {
                 title: '已分配',
-                name: 'alreadyReceive',
-                content: 'front-receive',
+                name: newTabName,
+                content: 'process-firalready',
                 isClose: true,
               }
             );
             this.tableNav = newTabName;
             break;
-          case 'orderManage':
+          case 'reject1':
             _this.tables.push(
               {
-                title: '订单管理',
-                name: 'orderManage',
-                content: 'front-order',
+                title: '已驳回',
+                name: newTabName,
+                content: 'process-firreject',
                 isClose: true,
               }
             );
             this.tableNav = newTabName;
             break;
-          case 'statistics':
+          case 'willAllot2':
+            _this.tables.push(
+              {
+                title: '待分配',
+                name: newTabName,
+                content: 'modify-reject',
+                isClose: true,
+              }
+            );
+            this.tableNav = newTabName;
+            break;
+          case 'alreadyAllot2':
+            _this.tables.push(
+              {
+                title: '已分配',
+                name: newTabName,
+                content: 'process-secalready',
+                isClose: true,
+              }
+            );
+            this.tableNav = newTabName;
+            break;
+          case 'reject2':
+            _this.tables.push(
+              {
+                title: '已驳回',
+                name: newTabName,
+                content: 'process-secreject',
+                isClose: true,
+              }
+            );
+            this.tableNav = newTabName;
+            break;
+          case 'statistic':
             _this.tables.push(
               {
                 title: '统计报表',
-                name: 'statistics',
-                content: 'front-statistic',
+                name: newTabName,
+                content: 'process-statistic',
                 isClose: true,
               }
             );

@@ -12,8 +12,12 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import router from './router';
 import App from './App';
-// 支具室
+
+// common
 import Header from './components/common/header';
+import Vheader from './components/common/vheader';
+
+// 支具室
 import HomePage from './components/navComponent/homepage';
 import ClientManage from './components/navComponent/clientmanage';
 import OrderManage from './components/navComponent/ordermanage';
@@ -70,9 +74,31 @@ import ModifyalreadyAllot from './components/modifymodule/alreadyallot';
 import ModifyReject from './components/modifymodule/reject';
 import ModifyStatistic from './components/modifymodule/statistic';
 
+//加工车间
+import ProcessHome from './components/process/homepage';
+import ProcessFirWillAllot from './components/process/firwillallot';
+import ProcessFirAlready from './components/process/firalready';
+import ProcessFirReject from './components/process/firreject';
+import ProcessSecWillAllot from './components/process/secwillallot';
+import ProcessSecAlready from './components/process/secalready';
+import ProcessSecReject from './components/process/secreject';
+import ProcessStatistic from './components/process/statistic';
+
+//质检部
+import QualityHome from './components/quality/homepage';
+import QualityAllValidate from './components/quality/allvalidate';
+import QualityHalfValidate from './components/quality/halfvalidate';
+import QualityReject from './components/quality/reject';
+import QualityWillValidate from './components/quality/willvalidate';
+import QualityAlreadyValidate from './components/quality/alreadyvalidate';
+import QualityStatistic from './components/quality/statistic';
+import QualityModifyValidate from './components/quality/modifyvalidate';
+
 Vue.config.productionTip = false;
 
 Vue.component('my-header', Header);
+Vue.component('v-header', Vheader);
+
 // 支具室
 Vue.component('my-home', HomePage);
 Vue.component('chart', ECharts);
@@ -130,6 +156,27 @@ Vue.component('modify-validate', ModifywillValidate);
 Vue.component('modify-reject', ModifyReject);
 Vue.component('modify-statistic', ModifyStatistic);
 Vue.component('modify-alreadyallot', ModifyalreadyAllot);
+
+//加工
+Vue.component('process-home', ProcessHome);
+Vue.component('process-firwillallot', ProcessFirWillAllot);
+Vue.component('process-firalready', ProcessFirAlready); 
+Vue.component('process-firreject', ProcessFirReject);
+Vue.component('process-secallot', ProcessSecWillAllot);
+Vue.component('process-secreject', ProcessSecReject);
+Vue.component('process-secalready', ProcessSecAlready);
+Vue.component('process-statistic', ProcessStatistic);
+
+//质检部
+Vue.component('quality-home', QualityHome);
+Vue.component('quality-all', QualityAllValidate);
+Vue.component('quality-half', QualityHalfValidate);
+Vue.component('quality-willvalidate', QualityWillValidate);
+Vue.component('quality-already', QualityAlreadyValidate);
+Vue.component('quality-reject', QualityReject);
+Vue.component('quality-modify', QualityModifyValidate);
+Vue.component('quality-statistic', QualityStatistic);
+
 
 
 Vue.use(Vuex);

@@ -14,7 +14,7 @@
         <el-button>近7天</el-button>
       </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
-        选择日期
+        质检时间
       </el-col>
       <el-col :span="5">
         <el-date-picker
@@ -33,43 +33,33 @@
       <el-col :span="2">
         <el-input placeholder="输入产品名"></el-input>
       </el-col>
-      <el-col :span="2" style="width: 6.53%;text-align: center">
-        主取型人员
-      </el-col>
-      <el-col :span="2">
-        <el-select v-model="takeName" placeholder="全部">
-          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-
-          </el-option>
-        </el-select>
-      </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
         <el-button type="primary" style="margin-left: 10px">查询</el-button>
       </el-col>
     </el-row>
     <el-row class="statistics">
       <el-col class="module" :span="3">
-        <p>取型数量</p>
+        <p>质检数量</p>
+        <h2>1000</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>一次合格数量</p>
+        <h2>900</h2>
+      </el-col>
+      <el-col class="module" :span="3">
+        <p>自制成品驳回次数</p>
         <h2>90</h2>
       </el-col>
       <el-col class="module" :span="3">
-        <p>自检驳回数量</p>
+        <p>修型质检驳回次数</p>
         <h2>90</h2>
       </el-col>
       <el-col class="module" :span="3">
-        <p>自检驳回次数</p>
+        <p>成型质检驳回次数</p>
         <h2>90</h2>
       </el-col>
       <el-col class="module" :span="3">
-        <p>取型验收驳回数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型问题反馈次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回次数</p>
+        <p>半成品质检驳回次数</p>
         <h2>90</h2>
       </el-col>
     </el-row>
@@ -116,8 +106,10 @@ export default {
         dataset: {
         source: [
             ['score', 'amount', 'product'],
-            [60, 20, '自检数量'],
-            [21, 40, '成型验收数量'],
+            [60, 20, '半成品质检数量'],
+            [50, 30, '成型质检数量'],
+            [21, 20, '修型质检数量'],
+            [40, 10, '自制成品质检数量'],
           ]
         },
         grid: {containLabel: true},

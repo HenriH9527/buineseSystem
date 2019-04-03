@@ -7,6 +7,8 @@
  * @param {TakeType}     取型页面 
  * @param {bigClient}    大客户页面
  * @param {outWork}      外出体检
+ * @param {Process}      加工车间
+ * @param {Quality}      质检部
  * 
  */
 
@@ -19,5 +21,7 @@ const TakeType = resolve => require(['../components/taketype'], resolve);
 const Modify = resolve => require(['../components/modify'], resolve);
 const BigClient = resolve => require(['../components/bigclient'], resolve);
 const OutWork = resolve => require(['../components/outwork'], resolve);
+const Process = resolve => require(['../components/process'], resolve);
+const Quality = resolve => require(['../components/quality'], resolve);
 
-export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork };
+export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality };
