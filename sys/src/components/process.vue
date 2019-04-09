@@ -137,7 +137,7 @@ export default {
               {
                 title: '待分配',
                 name: newTabName,
-                content: 'modify-reject',
+                content: 'process-secallot',
                 isClose: true,
               }
             );

@@ -9,6 +9,8 @@
  * @param {outWork}      外出体检
  * @param {Process}      加工车间
  * @param {Quality}      质检部
+ * @param {tryclothes}   试穿
+ * @param {maintain}     维修
  * 
  */
 
@@ -23,5 +25,8 @@ const BigClient = resolve => require(['../components/bigclient'], resolve);
 const OutWork = resolve => require(['../components/outwork'], resolve);
 const Process = resolve => require(['../components/process'], resolve);
 const Quality = resolve => require(['../components/quality'], resolve);
+const TryClothes = resolve => require(['../components/tryclothes'], resolve);
+const Maintain = resolve => require(['../components/maintain'], resolve);
 
-export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality };
+
+export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Maintain };

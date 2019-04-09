@@ -14,7 +14,7 @@
           <el-input size="small" v-model="clientPhone" placeholder="请输入联系电话"></el-input>  
         </el-col>
         <el-col :span="2" style="width: 5.5%;line-height: 30px">
-          <span>主取型人</span>
+          <span>订单状态</span>
         </el-col>
         <el-col :span="2">
           <el-select size="small" v-model="isMember">
@@ -24,38 +24,37 @@
           </el-select>
         </el-col>
         <el-col :span="2" style="width: 5.5%;line-height: 30px">
-          <span>产品名</span>
+          <span>下单时间</span>
         </el-col>
-        <el-col :span="3" style="text-align: left">
-          <el-select size="small" v-model="isMember">
-            <el-option value="[1, 2, 3]">
-
-            </el-option>
-          </el-select>     
+        <el-col :span="5">
+            <el-date-picker
+              style="width: 100%"
+              size="small"
+              v-model="clientChoseDate"
+              type="daterange"
+              range-separator="至"
+              start-placeholder="开始日期"
+              end-placeholder="结束日期">
+            </el-date-picker>
         </el-col>
         <el-col :span="1" style="width: 4.8%">
           <el-button size="small" type="primary" class="btns">查询</el-button>
         </el-col>
+        <el-col :span="1" style="width: 4.8%">
+          <el-button size="small" type="primary" class="btns">今日</el-button>
+        </el-col>
+        <el-col :span="1" style="width: 4.8%">
+          <el-button size="small"  class="btns">昨日</el-button>
+        </el-col>
+        <el-col :span="1" style="width: 4.8%">
+          <el-button size="small" class="btns">近七日</el-button>
+        </el-col>
     </el-row>
     <el-row class="another_row">
-      <el-col :span="2" style="width: 5.5%;line-height: 30px">
-          <span>验收日期</span>
+      <el-col :span="2" style="width: 5.5%;">
+        <span>订单类型</span>
       </el-col>
-      <el-col :span="5">
-          <el-date-picker
-            style="width: 100%"
-            size="small"
-            v-model="clientChoseDate"
-            type="daterange"
-            range-separator="至"
-            start-placeholder="开始日期"
-            end-placeholder="结束日期">
-          </el-date-picker>
-      </el-col>
-      <el-col :span="2" style="width: 5.5%;margin-left: 9.643%;">
-        <span>自检人</span>
-      </el-col>
-      <el-col :span="2" style="text-align: left">
+      <el-col :span="3" style="text-align: left">
           <el-select size="small" v-model="isMember">
             <el-option value="[1, 2, 3]">
 
@@ -63,15 +62,37 @@
           </el-select>     
       </el-col>
       <el-col :span="2" style="width: 5.5%;">
-        <span>验收人</span>
+        <span>付款类型</span>
       </el-col>
-      <el-col :span="2" style="text-align: left">
+      <el-col :span="3" style="text-align: left">
           <el-select size="small" v-model="isMember">
             <el-option value="[1, 2, 3]">
 
             </el-option>
           </el-select>     
       </el-col>
+      <el-col :span="2" style="width: 5.5%;">
+        <span>是否欠款</span>
+      </el-col>
+      <el-col :span="3" style="text-align: left">
+          <el-select size="small" v-model="isMember">
+            <el-option value="[1, 2, 3]">
+
+            </el-option>
+          </el-select>     
+      </el-col>
+      <el-col :span="2" style="width: 5.5%;">
+        <span>订单编号</span>
+      </el-col>
+      <el-col :span="3">
+          <el-input v-model="clientName" size="small" placeholder="请输入产品编号"></el-input>
+        </el-col>
+      <el-col :span="2" style="width: 5.5%;">
+        <span>下单人</span>
+      </el-col>
+      <el-col :span="3">
+          <el-input v-model="clientName" size="small" placeholder="请输入姓名"></el-input>
+        </el-col>
     </el-row>
     <el-row class="client_table">
         <el-col :span="24">
@@ -89,6 +110,7 @@
             <el-table-column align="center" prop="operation" label="操作" min-width="90">
               <template slot-scope="scope">
                 <el-button type="primary" @click="handleOrder(scope.row)" size="small">详情</el-button>
+                <el-button type="primary" @click="handleOrder(scope.row)" size="small">打印小票</el-button>
               </template>
             </el-table-column>
           </el-table>

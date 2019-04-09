@@ -94,6 +94,24 @@ import QualityAlreadyValidate from './components/quality/alreadyvalidate';
 import QualityStatistic from './components/quality/statistic';
 import QualityModifyValidate from './components/quality/modifyvalidate';
 
+//测评
+import EvaluationHome from './components/evaluation/homepage';
+import EvaluationWillReceive from './components/evaluation/willreceive';
+import EvaluationReceive from './components/evaluation/receive';
+import EvaluationOrderManage from './components/evaluation/ordermanage';
+import EvaluationProduct from './components/evaluation/product';
+import EvaluationStatistic from './components/evaluation/statistic';
+
+//试穿
+import TryTake from './components/tryclothes/take';
+import TryWillTake from './components/tryclothes/willtake';
+import TryWillMessage from './components/tryclothes/willmessage';
+
+//维修
+import MaintainHome from './components/maintain/homepage';
+import Maintain from './components/maintain/maintain';
+import WillMaintain from './components/maintain/willmaintain';
+
 Vue.config.productionTip = false;
 
 Vue.component('my-header', Header);
@@ -176,6 +194,24 @@ Vue.component('quality-already', QualityAlreadyValidate);
 Vue.component('quality-reject', QualityReject);
 Vue.component('quality-modify', QualityModifyValidate);
 Vue.component('quality-statistic', QualityStatistic);
+
+//测评
+Vue.component('evaluation-home', EvaluationHome);
+Vue.component('evaluation-willreceive', EvaluationWillReceive);
+Vue.component('evaluation-receive', EvaluationReceive);
+Vue.component('evaluation-order', EvaluationOrderManage);
+Vue.component('evaluation-product', EvaluationProduct);
+Vue.component('evaluation-statistic', EvaluationStatistic);
+
+// 试穿
+Vue.component('try-take', TryTake);
+Vue.component('try-willtake', TryWillTake);
+Vue.component('try-message', TryWillMessage);
+
+//维修
+Vue.component('maintain-home', MaintainHome);
+Vue.component('maintain', Maintain);
+Vue.component('will-maintain', WillMaintain);
 
 
 

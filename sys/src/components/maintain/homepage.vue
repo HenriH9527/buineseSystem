@@ -1,20 +1,14 @@
 <template>
   <div class="container">
     <el-row class="query_hurdle">
-      <el-col :span="2" style="width: 6.33%;text-align: center;">
-        快速查看
+      <el-col :span="2" style="width: 5.33%;text-align: center">
+        产品昵称
       </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>今天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>昨天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>近7天</el-button>
+      <el-col :span="4">
+        <el-input placeholder="输入产品名"></el-input>
       </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
-        选择日期
+        维修日期
       </el-col>
       <el-col :span="5">
         <el-date-picker
@@ -28,23 +22,19 @@
         </el-date-picker>
       </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
-        产品名
-      </el-col>
-      <el-col :span="2">
-        <el-input placeholder="输入产品名"></el-input>
-      </el-col>
-      <el-col :span="2" style="width: 6.53%;text-align: center">
-        主取型人员
-      </el-col>
-      <el-col :span="2">
-        <el-select v-model="takeName" placeholder="全部">
-          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-
-          </el-option>
-        </el-select>
-      </el-col>
-      <el-col :span="2" style="width: 5.33%;text-align: center">
         <el-button type="primary" style="margin-left: 10px">查询</el-button>
+      </el-col>
+      <el-col :span="2" style="width: 6.33%;text-align: center;">
+        快速查看
+      </el-col>
+      <el-col :span="2" style="width: 6.33%">
+        <el-button type="primary">今天</el-button>
+      </el-col>
+      <el-col :span="2" style="width: 6.33%">
+        <el-button>昨天</el-button>
+      </el-col>
+      <el-col :span="2" style="width: 6.33%">
+        <el-button>近7天</el-button>
       </el-col>
     </el-row>
     <el-row class="statistics">

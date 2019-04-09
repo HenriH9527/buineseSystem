@@ -22,24 +22,15 @@ export default {
       tables: [{
         title: '💳',
         name: 'home',
-        content: 'evaluation-home',
+        content: 'maintain-home',
         isClose: false,
       }],
       navTable: [{
-        name: 'willreceive',
-        title: '待接待',
+        name: 'willmaintain',
+        title: '待维修',
       },{
-        name: 'receive',
-        title: '已接待',
-      },{
-        name: 'ordermanage',
-        title: '订单管理',
-      },{
-        name: 'product',
-        title: '产品维修',
-      },{
-        name: 'statistic',
-        title: '统计报表',
+        name: 'maintain',
+        title: '已维修',
       }],
       Repeat: false,
     };
@@ -72,54 +63,21 @@ export default {
       });
       if(_this.Repeat) {
         switch(newTabName) {
-          case 'willreceive':
+          case 'willmaintain':
             _this.tables.push({
-              title: '待接待',
+              title: '待维修',
               name: newTabName,
-              content: 'evaluation-willreceive',
+              content: 'will-maintain',
               isClose: true,
             });
             this.tableNav = newTabName;
             break;
-          case 'receive':
+          case 'maintain':
             _this.tables.push(
               {
-                title: '已接待',
-                name: 'receive',
-                content: 'evaluation-receive',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'ordermanage':
-            _this.tables.push(
-              {
-                title: '订单管理',
-                name: 'ordermanage',
-                content: 'evaluation-order',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'product':
-            _this.tables.push(
-              {
-                title: '产品维修',
-                name: 'product',
-                content: 'evaluation-product',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'statistic':
-            _this.tables.push(
-              {
-                title: '统计报表',
-                name: 'statistic',
-                content: 'evaluation-statistic',
+                title: '已维修',
+                name: newTabName,
+                content: 'maintain',
                 isClose: true,
               }
             );

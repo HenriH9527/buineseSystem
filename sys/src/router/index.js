@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork, Process, Quality } from './path';
+import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork, Process, Quality, TryClothes, Maintain } from './path';
+import { Main } from 'element-ui';
 
 Vue.use(Router);
 
@@ -60,6 +61,16 @@ export default new Router({
       path: '/quality',
       name: 'quality',
       component: Quality,
+    },
+    {
+      path: '/clothes',
+      name: 'tryclothes',
+      component: TryClothes,
+    },
+    {
+      path: '/maintain',
+      name: 'maintain',
+      component: Maintain,
     },
   ],
 });
