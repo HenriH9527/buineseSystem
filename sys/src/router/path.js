@@ -11,6 +11,8 @@
  * @param {Quality}      质检部
  * @param {tryclothes}   试穿
  * @param {maintain}     维修
+ * @param {Fiance}       财务
+ * @param {Warehouse}    库房
  * 
  */
 
@@ -27,6 +29,8 @@ const Process = resolve => require(['../components/process'], resolve);
 const Quality = resolve => require(['../components/quality'], resolve);
 const TryClothes = resolve => require(['../components/tryclothes'], resolve);
 const Maintain = resolve => require(['../components/maintain'], resolve);
+const Fiance = resolve => require(['../components/fiance'], resolve);
+const Warehouse = resolve => require(['../components/warehouse'], resolve);
 
 
-export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Maintain };
+export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Maintain, Fiance, Warehouse };

@@ -112,6 +112,21 @@ import MaintainHome from './components/maintain/homepage';
 import Maintain from './components/maintain/maintain';
 import WillMaintain from './components/maintain/willmaintain';
 
+//财务
+import FianceHome from './components/finance/homepage';
+import FianceStatistic from './components/finance/statistic';
+import FianceOrder from './components/finance/ordersearch';
+import FianceWillBack from './components/finance/willback';
+
+//库房
+import WarehouseHome from './components/warehouse/homepage';
+import WarehouseOrder from './components/warehouse/warehouseorder';
+import WarehouseInHouseOrder from './components/warehouse/inhouseorder';
+import WarehouseOutHouseOrder from './components/warehouse/outhouseorder';
+import WarehouseWillIn from './components/warehouse/willin';
+import WarehouseWillOut from './components/warehouse/willout';
+import WarehouseStatistic from './components/warehouse/statistic';
+
 Vue.config.productionTip = false;
 
 Vue.component('my-header', Header);
@@ -213,6 +228,20 @@ Vue.component('maintain-home', MaintainHome);
 Vue.component('maintain', Maintain);
 Vue.component('will-maintain', WillMaintain);
 
+//财务
+Vue.component('fiance-home', FianceHome);
+Vue.component('fiance-statistic', FianceStatistic);
+Vue.component('fiance-order', FianceOrder);
+Vue.component('fiance-back', FianceWillBack);
+
+//库房
+Vue.component('warehouse-home', WarehouseHome);
+Vue.component('warehouse-order', WarehouseOrder);
+Vue.component('warehouse-inhouse', WarehouseInHouseOrder);
+Vue.component('warehouse-outhouse', WarehouseOutHouseOrder);
+Vue.component('warehouse-in', WarehouseWillIn);
+Vue.component('warehouse-out', WarehouseWillOut);
+Vue.component('warehouse-statistic', WarehouseStatistic);
 
 
 Vue.use(Vuex);

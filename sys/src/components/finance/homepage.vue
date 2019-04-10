@@ -14,7 +14,7 @@
         <el-button>近7天</el-button>
       </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
-        选择日期
+        下单日期
       </el-col>
       <el-col :span="5">
         <el-date-picker
@@ -30,11 +30,11 @@
       <el-col :span="2" style="width: 5.33%;text-align: center">
         产品名
       </el-col>
-      <el-col :span="2">
+      <el-col :span="3">
         <el-input placeholder="输入产品名"></el-input>
       </el-col>
-      <el-col :span="2" style="width: 6.53%;text-align: center">
-        主取型人员
+      <el-col :span="2" style="width: 5.53%;text-align: center">
+        医院
       </el-col>
       <el-col :span="2">
         <el-select v-model="takeName" placeholder="全部">
@@ -48,29 +48,17 @@
       </el-col>
     </el-row>
     <el-row class="statistics">
-      <el-col class="module" :span="3">
-        <p>取型数量</p>
-        <h2>90</h2>
+      <el-col class="module" :span="5">
+        <p>总收入金额</p>
+        <h2>888888.00</h2>
       </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回数量</p>
-        <h2>90</h2>
+      <el-col class="module" :span="5">
+        <p>退款金额</p>
+        <h2>2000.00</h2>
       </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型问题反馈次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回次数</p>
-        <h2>90</h2>
+      <el-col class="module" :span="5">
+        <p>开票金额</p>
+        <h2>5000.00</h2>
       </el-col>
     </el-row>
     <el-row class="graph">
@@ -116,8 +104,10 @@ export default {
         dataset: {
         source: [
             ['score', 'amount', 'product'],
-            [60, 20, '自检数量'],
-            [21, 40, '成型验收数量'],
+            [60, 20, 'POSS机'],
+            [31, 30, '拉卡拉金额'],
+            [11, 10, '转账金额'],
+            [41, 50, '取现金额'],
           ]
         },
         grid: {containLabel: true},

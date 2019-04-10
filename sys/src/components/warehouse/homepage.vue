@@ -1,81 +1,42 @@
 <template>
   <div class="container">
     <el-row class="query_hurdle">
-      <el-col :span="2" style="width: 6.33%;text-align: center;">
-        快速查看
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>今天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>昨天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>近7天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 5.33%;text-align: center">
-        选择日期
-      </el-col>
-      <el-col :span="5">
-        <el-date-picker
-        style="width: 100%;"
-        size="large"
-        v-model="date"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期">
-        </el-date-picker>
-      </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
         产品名
       </el-col>
-      <el-col :span="2">
-        <el-input placeholder="输入产品名"></el-input>
+      <el-col :span="3">
+        <el-input size="small" placeholder="输入产品名"></el-input>
       </el-col>
-      <el-col :span="2" style="width: 6.53%;text-align: center">
-        主取型人员
-      </el-col>
-      <el-col :span="2">
-        <el-select v-model="takeName" placeholder="全部">
-          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+      <el-col :span="2" style="width: 4.5%;text-align: center;">
+          <span>医院</span>
+        </el-col>
+        <el-col :span="3">
+          <el-select size="small" v-model="isMember">
+            <el-option value="[1, 2, 3]">
 
-          </el-option>
-        </el-select>
+            </el-option>
+          </el-select>
       </el-col>
-      <el-col :span="2" style="width: 5.33%;text-align: center">
-        <el-button type="primary" style="margin-left: 10px">查询</el-button>
+      <el-col :span="2" style="width: 5.33%;text-align: center;margin-left: 1%">
+        <el-button size="small" type="primary">查询</el-button>
       </el-col>
     </el-row>
     <el-row class="statistics">
-      <el-col class="module" :span="3">
-        <p>取型数量</p>
+      <el-col class="module" :span="4">
+        <p>产品待入库</p>
+        <h2>1000</h2>
+      </el-col>
+      <el-col class="module" :span="4">
+        <p>产品待出库</p>
+        <h2>900</h2>
+      </el-col>
+      <el-col class="module" :span="4">
+        <p>待入库已逾期</p>
         <h2>90</h2>
       </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回数量</p>
+      <el-col class="module" :span="4">
+        <p>待出库已逾期</p>
         <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型问题反馈次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回次数</p>
-        <h2>90</h2>
-      </el-col>
-    </el-row>
-    <el-row class="graph">
-      <el-col class="graph_box">
-        <chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>
       </el-col>
     </el-row>
   </div>
@@ -116,8 +77,10 @@ export default {
         dataset: {
         source: [
             ['score', 'amount', 'product'],
-            [60, 20, '自检数量'],
-            [21, 40, '成型验收数量'],
+            [60, 20, '半成品质检数量'],
+            [50, 30, '成型质检数量'],
+            [21, 20, '修型质检数量'],
+            [40, 10, '自制成品质检数量'],
           ]
         },
         grid: {containLabel: true},
