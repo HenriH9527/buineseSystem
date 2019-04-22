@@ -9,10 +9,10 @@
  * @param {outWork}      外出体检
  * @param {Process}      加工车间
  * @param {Quality}      质检部
- * @param {tryclothes}   试穿
- * @param {maintain}     维修
- * @param {Fiance}       财务
+ * @param {tryclothes}   试穿 + 维修
  * @param {Warehouse}    库房
+ * @param {Theory}       理论
+ * @param {SuperManage}  超级管理员
  * 
  */
 
@@ -28,9 +28,10 @@ const OutWork = resolve => require(['../components/outwork'], resolve);
 const Process = resolve => require(['../components/process'], resolve);
 const Quality = resolve => require(['../components/quality'], resolve);
 const TryClothes = resolve => require(['../components/tryclothes'], resolve);
-const Maintain = resolve => require(['../components/maintain'], resolve);
 const Fiance = resolve => require(['../components/fiance'], resolve);
 const Warehouse = resolve => require(['../components/warehouse'], resolve);
+const Theory  = resolve => require(['../components/theory'], resolve);
+const SuperManage = resolve => require(['../components/supermanage'], resolve)
 
 
-export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Maintain, Fiance, Warehouse };
+export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Fiance, Warehouse, Theory, SuperManage };

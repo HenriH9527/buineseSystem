@@ -58,7 +58,7 @@
             <el-table-column align="center" prop="operation" label="操作" min-width="120">
               <template slot-scope="scope">
                 <el-button type="primary" @click="handleOrder(scope.row)" size="small">详情</el-button>
-                <el-button type="warning" @click="handleOrder(scope.row)" size="small">试穿</el-button>
+                <el-button type="warning" @click="handleOrder(scope.row)" size="small">上传照片</el-button>
               </template>
             </el-table-column>
           </el-table>

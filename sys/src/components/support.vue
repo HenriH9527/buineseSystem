@@ -33,7 +33,13 @@ export default {
         title: '订单管理',
       },{
         name: 'market',
-        title: '销售报表',
+        title: '统计报表',
+      },{
+        name: 'member',
+        title: '会员统计',
+      },{
+        name: 'log',
+        title: '操作日志',
       }],
       Repeat: false,
     };
@@ -90,13 +96,36 @@ export default {
         case 'market':
           _this.tables.push(
             {
-              title: '销售报表',
+              title: '统计报表',
               name: 'market',
               content: 'my-market',
               isClose: true,
             }
           );
           this.tableNav = newTabName;
+          break;
+        case 'member':
+          _this.tables.push(
+            {
+              title: '会员统计',
+              name: 'member',
+              content: 'my-member',
+              isClose: true,
+            }
+          );
+          this.tableNav = newTabName;
+          break;
+        case 'log':
+          _this.tables.push(
+            {
+              title: '操作日志',
+              name: 'log',
+              content: 'my-log',
+              isClose: true,
+            }
+          );
+          this.tableNav = newTabName;
+          break;
         }
       } else {
         return;

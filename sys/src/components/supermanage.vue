@@ -17,20 +17,20 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      tableNav: 'home',
-      tabIndex: 'home',
+      tableNav: 'sys',
+      tabIndex: 'sys',
       tables: [{
-        title: '💳',
-        name: 'home',
-        content: 'maintain-home',
+        title: '系统用户管理',
+        name: 'sys',
+        content: 'sys-home',
         isClose: false,
       }],
       navTable: [{
-        name: 'willmaintain',
-        title: '待维修',
+        name: 'sys',
+        title: '系统用户管理',
       },{
-        name: 'maintain',
-        title: '已维修',
+        name: 'role',
+        title: '角色管理',
       }],
       Repeat: false,
     };
@@ -63,21 +63,15 @@ export default {
       });
       if(_this.Repeat) {
         switch(newTabName) {
-          case 'willmaintain':
-            _this.tables.push({
-              title: '待维修',
-              name: newTabName,
-              content: 'will-maintain',
-              isClose: true,
-            });
+          case 'sys':
             this.tableNav = newTabName;
             break;
-          case 'maintain':
+          case 'role':
             _this.tables.push(
               {
-                title: '已维修',
-                name: newTabName,
-                content: 'maintain',
+                title: '角色管理',
+                name: 'role',
+                content: 'sys-role',
                 isClose: true,
               }
             );

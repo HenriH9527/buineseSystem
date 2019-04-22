@@ -22,6 +22,8 @@ import HomePage from './components/navComponent/homepage';
 import ClientManage from './components/navComponent/clientmanage';
 import OrderManage from './components/navComponent/ordermanage';
 import MarketReport from './components/navComponent/marketreport';
+import MemberReport from './components/navComponent/memberreport';
+import Log from './components/navComponent/log';
 
 //取型
 import TakeHome from './components/taketype/homepage';
@@ -102,15 +104,14 @@ import EvaluationOrderManage from './components/evaluation/ordermanage';
 import EvaluationProduct from './components/evaluation/product';
 import EvaluationStatistic from './components/evaluation/statistic';
 
-//试穿
+//维修 试穿
 import TryTake from './components/tryclothes/take';
 import TryWillTake from './components/tryclothes/willtake';
 import TryWillMessage from './components/tryclothes/willmessage';
+import MaintainRepair from './components/tryclothes/willrepair';
+import Maintain from './components/tryclothes/maintain';
+import WillMaintain from './components/tryclothes/willmaintain';
 
-//维修
-import MaintainHome from './components/maintain/homepage';
-import Maintain from './components/maintain/maintain';
-import WillMaintain from './components/maintain/willmaintain';
 
 //财务
 import FianceHome from './components/finance/homepage';
@@ -127,6 +128,15 @@ import WarehouseWillIn from './components/warehouse/willin';
 import WarehouseWillOut from './components/warehouse/willout';
 import WarehouseStatistic from './components/warehouse/statistic';
 
+//理论
+import TheoryEvaluation from './components/theory/evaluation';
+import TheoryPhysical from './components/theory/physical';
+
+// 系统管理
+import SysHome from './components/supermanage/sys';
+import SysRole from './components/supermanage/role';
+import SysAddRole from './components/supermanage/addrole';
+
 Vue.config.productionTip = false;
 
 Vue.component('my-header', Header);
@@ -138,6 +148,8 @@ Vue.component('chart', ECharts);
 Vue.component('my-client', ClientManage);
 Vue.component('my-order', OrderManage);
 Vue.component('my-market', MarketReport);
+Vue.component('my-member', MemberReport);
+Vue.component('my-log', Log);
 
 // 取型
 Vue.component('take-home', TakeHome);
@@ -218,13 +230,11 @@ Vue.component('evaluation-order', EvaluationOrderManage);
 Vue.component('evaluation-product', EvaluationProduct);
 Vue.component('evaluation-statistic', EvaluationStatistic);
 
-// 试穿
+// 试穿 维修
 Vue.component('try-take', TryTake);
 Vue.component('try-willtake', TryWillTake);
 Vue.component('try-message', TryWillMessage);
-
-//维修
-Vue.component('maintain-home', MaintainHome);
+Vue.component('maintain-repair', MaintainRepair);
 Vue.component('maintain', Maintain);
 Vue.component('will-maintain', WillMaintain);
 
@@ -242,6 +252,15 @@ Vue.component('warehouse-outhouse', WarehouseOutHouseOrder);
 Vue.component('warehouse-in', WarehouseWillIn);
 Vue.component('warehouse-out', WarehouseWillOut);
 Vue.component('warehouse-statistic', WarehouseStatistic);
+
+//理论
+Vue.component('theory-evaluation', TheoryEvaluation);
+Vue.component('theory-physical', TheoryPhysical);
+
+//系统管理
+Vue.component('sys-home', SysHome);
+Vue.component('sys-role', SysRole);
+Vue.component('sys-add', SysAddRole);
 
 
 Vue.use(Vuex);

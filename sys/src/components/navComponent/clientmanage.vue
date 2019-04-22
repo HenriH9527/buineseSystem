@@ -1,8 +1,11 @@
 <template>
   <div class="container">
       <el-row class="operation">
-        <el-col :span="3">
+        <el-col :span="2" style="text-align: center">
           <el-button type="primary" icon="el-icon-plus">新增</el-button>
+        </el-col>
+        <el-col :span="3" >
+          <el-button type="danger">导出excel</el-button>
         </el-col>
       </el-row>
       <el-row class="search">

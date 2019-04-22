@@ -17,33 +17,21 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      tableNav: 'willmessage',
-      tabIndex: 'willmessage',
+      tableNav: 'evaluation',
+      tabIndex: 'evaluation',
       tables: [{
-        title: '待通知',
-        name: 'willmessage',
-        content: 'try-message',
+        title: '测评数据',
+        name: 'evaluation',
+        content: 'theory-evaluation',
         isClose: false,
       }],
       navTable: [{
-        name: 'willmessage',
-        title: '待通知',
+        name: 'evaluation',
+        title: '测评数据',
       },{
-        name: 'willrepair',
-        title: '待报修',
-      },{
-        name: 'willtake',
-        title: '待试穿',
-      },{
-        name: 'willmaintain',
-        title: '待维修',
-      },{
-        name: 'take',
-        title: '已试穿',
-      },{
-        name: 'maintain',
-        title: '已维修',
-      },],
+        name: 'physical',
+        title: '体检数据',
+      }],
       Repeat: false,
     };
   },
@@ -75,70 +63,15 @@ export default {
       });
       if(_this.Repeat) {
         switch(newTabName) {
-          case 'willmessage':
-            _this.tableNav = newTabName;
-            break;
-          case 'willtake':
-            _this.tables.push(
-              {
-                title: '待试穿',
-                name: newTabName,
-                content: 'try-willtake',
-                isClose: true,
-              }
-            );
+          case 'evaluation':
             this.tableNav = newTabName;
             break;
-          case 'willrepair':
+          case 'physical':
             _this.tables.push(
               {
-                title: '待报修',
-                name: newTabName,
-                content: 'maintain-repair',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'willtake':
-            _this.tables.push(
-              {
-                title: '待试穿',
-                name: newTabName,
-                content: 'try-willtake',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'willmaintain':
-            _this.tables.push(
-              {
-                title: '待维修',
-                name: newTabName,
-                content: 'will-maintain',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'take':
-            _this.tables.push(
-              {
-                title: '已试穿',
-                name: newTabName,
-                content: 'try-take',
-                isClose: true,
-              }
-            );
-            this.tableNav = newTabName;
-            break;
-          case 'maintain':
-            _this.tables.push(
-              {
-                title: '已维修',
-                name: newTabName,
-                content: 'maintain',
+                title: '体检数据',
+                name: 'physical',
+                content: 'theory-physical',
                 isClose: true,
               }
             );

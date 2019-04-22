@@ -1,72 +1,35 @@
 <template>
   <div class="container">
     <el-row class="query_hurdle">
-      <el-col :span="2" style="width: 5.33%;text-align: center">
-        产品昵称
+      <el-col :span="2" style="margin-left: 2%;">
+        <el-button type="success">新增角色</el-button>
+      </el-col>
+      <el-col :span="2" style="width:5.33%;text-align: center">
+        角色名称
       </el-col>
       <el-col :span="4">
-        <el-input placeholder="输入产品名"></el-input>
-      </el-col>
-      <el-col :span="2" style="width: 5.33%;text-align: center">
-        维修日期
-      </el-col>
-      <el-col :span="5">
-        <el-date-picker
-        style="width: 100%;"
-        size="large"
-        v-model="date"
-        type="daterange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期">
-        </el-date-picker>
+        <el-input placeholder="输入角色名称"></el-input>
       </el-col>
       <el-col :span="2" style="width: 5.33%;text-align: center">
         <el-button type="primary" style="margin-left: 10px">查询</el-button>
       </el-col>
-      <el-col :span="2" style="width: 6.33%;text-align: center;">
-        快速查看
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button type="primary">今天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>昨天</el-button>
-      </el-col>
-      <el-col :span="2" style="width: 6.33%">
-        <el-button>近7天</el-button>
-      </el-col>
     </el-row>
-    <el-row class="statistics">
-      <el-col class="module" :span="3">
-        <p>取型数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>自检驳回次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回数量</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型问题反馈次数</p>
-        <h2>90</h2>
-      </el-col>
-      <el-col class="module" :span="3">
-        <p>取型验收驳回次数</p>
-        <h2>90</h2>
-      </el-col>
-    </el-row>
-    <el-row class="graph">
-      <el-col class="graph_box">
-        <chart ref="chart1" :options="orgOptions" :auto-resize="true"></chart>
-      </el-col>
+    <el-row class="client_table">
+        <el-col :span="24">
+          <el-table :border="true" :data="clientData" style="width: 100%">
+            <el-table-column width="60" align="center" type="index" label="序号">
+
+            </el-table-column>
+            <el-table-column align="center" prop="name" label="角色名称" min-width="60"></el-table-column>
+            <el-table-column align="center" prop="phone" label="功能" min-width="220"></el-table-column>
+            <el-table-column align="center" prop="operation" label="操作" min-width="90">
+              <template slot-scope="scope">
+                <el-button type="warning" @click="handleOrder(scope.row)" size="small">修改角色</el-button>
+                <el-button type="danger" @click="handleOrder(scope.row)" size="small">删除角色</el-button>
+              </template>
+            </el-table-column>
+          </el-table>
+        </el-col>
     </el-row>
   </div>
 </template>
@@ -86,6 +49,16 @@ export default {
           label: '李四'
         }],
         orgOptions: {},
+        clientData: [{
+          name: '张三',
+          sex: '男',
+          phone: '1829416233',
+          takePeople: '王麻子',
+          productName: '拉升期',
+          moduleState: '完成',
+          time: String(new Date().toLocaleDateString()),
+          isMember: '是',
+        }],
       }
   },
   mounted() {
@@ -180,6 +153,9 @@ export default {
         left: -90px;
       }
     }
+  }
+  .client_table{
+    margin-top: 20px;
   }
 }
 </style>

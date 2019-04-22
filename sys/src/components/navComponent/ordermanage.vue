@@ -1,10 +1,5 @@
 <template>
   <div class="container">
-      <el-row class="operation">
-        <el-col :span="3">
-          <el-button type="primary" icon="el-icon-plus">新增</el-button>
-        </el-col>
-      </el-row>
       <el-row class="search">
         <el-col :span="2" style="width: 5.5%;line-height: 30px">
           <span>客户姓名</span>
@@ -99,6 +94,19 @@
           <el-input size="small" v-model="orderName" placeholder="请输入下单人姓名">
 
           </el-input>
+        </el-col>
+        <el-col :span="2" style="width: 5.5%;line-height: 30px">
+          <span>客户类型</span>
+        </el-col>
+        <el-col :span="2">
+          <el-select size="small" v-model="clientState">
+            <el-option value="[1, 2, 3]">
+
+            </el-option>
+          </el-select>
+        </el-col>
+        <el-col :span="2">
+          <el-button type="danger" size="small">导出excel</el-button>
         </el-col>
       </el-row>
       <el-row class="client_table">

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork, Process, Quality, TryClothes, Maintain, Fiance, Warehouse } from './path';
+import { Support, LoginPage, Modify, Front, TakeType, Evaluation, BigClient, OutWork, Process, Quality, TryClothes, Maintain, Fiance, Warehouse, Theory, SuperManage } from './path';
 import { Main } from 'element-ui';
 
 Vue.use(Router);
@@ -68,11 +68,6 @@ export default new Router({
       component: TryClothes,
     },
     {
-      path: '/maintain',
-      name: 'maintain',
-      component: Maintain,
-    },
-    {
 
       path: '/fiance',
       name:'fiance',
@@ -82,6 +77,16 @@ export default new Router({
       path: '/warehouse',
       name: 'warehouse',
       component: Warehouse,
+    },
+    {
+      path: '/supermanage',
+      name: 'super',
+      component: SuperManage,
+    },
+    {
+      path: '/theory',
+      name: 'theory',
+      component: Theory,
     },
   ],
 });
