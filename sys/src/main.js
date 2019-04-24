@@ -128,6 +128,15 @@ import WarehouseWillIn from './components/warehouse/willin';
 import WarehouseWillOut from './components/warehouse/willout';
 import WarehouseStatistic from './components/warehouse/statistic';
 
+//回访
+import ReturnHome from './components/return/homepage';
+import ReturnLog from './components/return/log';
+import ReturnWill from './components/return/will';
+import ReturnQuestion from './components/return/question';
+import ReturnRemind from './components/return/remind';
+import ReturnNotGet from './components/return/notget';
+import ReturnStatistic from './components/return/statistic';
+
 //理论
 import TheoryEvaluation from './components/theory/evaluation';
 import TheoryPhysical from './components/theory/physical';
@@ -252,6 +261,15 @@ Vue.component('warehouse-outhouse', WarehouseOutHouseOrder);
 Vue.component('warehouse-in', WarehouseWillIn);
 Vue.component('warehouse-out', WarehouseWillOut);
 Vue.component('warehouse-statistic', WarehouseStatistic);
+
+//回访
+Vue.component('return-home', ReturnHome);
+Vue.component('return-will', ReturnWill);
+Vue.component('return-notget', ReturnNotGet);
+Vue.component('return-statistic', ReturnStatistic);
+Vue.component('return-question', ReturnQuestion);
+Vue.component('return-remind', ReturnRemind);
+Vue.component('return-log', ReturnLog);
 
 //理论
 Vue.component('theory-evaluation', TheoryEvaluation);

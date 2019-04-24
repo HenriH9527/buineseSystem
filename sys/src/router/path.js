@@ -11,6 +11,7 @@
  * @param {Quality}      质检部
  * @param {tryclothes}   试穿 + 维修
  * @param {Warehouse}    库房
+ * @param {Return}       回访
  * @param {Theory}       理论
  * @param {SuperManage}  超级管理员
  * 
@@ -30,8 +31,9 @@ const Quality = resolve => require(['../components/quality'], resolve);
 const TryClothes = resolve => require(['../components/tryclothes'], resolve);
 const Fiance = resolve => require(['../components/fiance'], resolve);
 const Warehouse = resolve => require(['../components/warehouse'], resolve);
+const Return = resolve => require(['../components/return'], resolve);
 const Theory  = resolve => require(['../components/theory'], resolve);
 const SuperManage = resolve => require(['../components/supermanage'], resolve)
 
 
-export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Fiance, Warehouse, Theory, SuperManage };
+export { Support, LoginPage, Evaluation, Front, TakeType, Modify, BigClient, OutWork, Process, Quality, TryClothes, Fiance, Warehouse, Return, Theory, SuperManage };
