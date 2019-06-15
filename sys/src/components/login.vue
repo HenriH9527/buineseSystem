@@ -24,7 +24,7 @@
         </el-row>
         <el-row :span="24" style="margin-top: 31px;">
           <el-col :span="20" :offset="2" class="login_btn">
-              <div @click="goHome()">
+              <div @click="doLogin()">
                 登录
               </div>
           </el-col>
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import $axios from 'axios';
+
 export default {
   name: 'HelloWorld',
   data() {
@@ -46,8 +48,15 @@ export default {
 
   // },
   methods: {
-    goHome() {
-      this.$router.push('/home');
+    doLogin() {
+      $axios.post('http://192.168.3.107:9081/api/SignInApi/GetSignInInfo',{
+        SignInName: "13652148563",
+        PassWord: "123456"  
+      }).then(response => {
+        console.log(response.data);
+      }).catch(error => {
+        console.log(error);
+      })
     },
   },
 };
